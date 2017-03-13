@@ -1,5 +1,3 @@
-package social.noodle.domain.resources;
-
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
