@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * PagedResources - because native Spring Hateoas PagedResources sucks :(
+ * PagedResources (because native Spring Hateoas PagedResources sucks :()
  * Page metadata wrapper
  *
  * Notes:
@@ -103,9 +103,10 @@ public class PagedResources<T> extends ResourceSupport implements Page<T> {
         pageParams.add("page", Integer.toString(page));
         pageParams.add("size", Integer.toString(size));
 
+        // This is sort of messy
         if (sort != null) {
             String[] sortParams = sort.toString().split(":");
-            sortParams[1] = sortParams[1].toLowerCase();
+            sortParams[1] = sortParams[1].toLowerCase().trim();
 
             // Concat array into single string separated by comma
             pageParams.add("sort", String.join(",", sortParams));
